@@ -8,11 +8,11 @@ output "palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers_des
 }
 output "palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers_dns_settings" {
   description = "Map of dns_settings values across all palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers, keyed the same as var.palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers"
-  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_strata_cloud_manager.palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers : k => v.dns_settings if v.dns_settings != null && length(v.dns_settings) > 0 }
+  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_strata_cloud_manager.palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers : k => one(v.dns_settings) if v.dns_settings != null && length(v.dns_settings) > 0 }
 }
 output "palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers_identity" {
   description = "Map of identity values across all palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers, keyed the same as var.palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers"
-  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_strata_cloud_manager.palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers : k => v.identity if v.identity != null && length(v.identity) > 0 }
+  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_strata_cloud_manager.palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers : k => one(v.identity) if v.identity != null && length(v.identity) > 0 }
 }
 output "palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers_location" {
   description = "Map of location values across all palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers, keyed the same as var.palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers"
@@ -28,7 +28,7 @@ output "palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers_nam
 }
 output "palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers_network_profile" {
   description = "Map of network_profile values across all palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers, keyed the same as var.palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers"
-  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_strata_cloud_manager.palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers : k => v.network_profile if v.network_profile != null && length(v.network_profile) > 0 }
+  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_strata_cloud_manager.palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers : k => one(v.network_profile) if v.network_profile != null && length(v.network_profile) > 0 }
 }
 output "palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers_plan_id" {
   description = "Map of plan_id values across all palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers, keyed the same as var.palo_alto_next_generation_firewall_virtual_hub_strata_cloud_managers"
